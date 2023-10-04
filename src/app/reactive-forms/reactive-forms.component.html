@@ -23,7 +23,7 @@
   <div class="mb-3 row">
     <label  class="col-sm-2 col-form-label">Edad</label>
     <div class="col-sm-10">
-      <input [ngClass]="{'is-invalid': userForm.controls['age'].invalid && userForm.controls['age'].touched && userForm.controls['phone'].value > 18}" formControlName="age" type="text" class="form-control" id="age" >
+      <input [ngClass]="{'is-invalid': userForm.controls['age'].invalid && userForm.controls['age'].touched}" formControlName="age" type="text" class="form-control" id="age" >
       <div class="invalid-feedback">
         Debe ingresar una edad
       </div>
