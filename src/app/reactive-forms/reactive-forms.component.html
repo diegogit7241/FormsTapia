@@ -1,0 +1,53 @@
+<br>
+<h1>Formulario de ingreso al Bar</h1>
+<br>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<div class="mb-3 row">
+    <label  class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input [ngClass]="{'is-invalid': userForm.controls['name'].invalid && userForm.controls['name'].touched}" formControlName="name" type="text" class="form-control" id="name" >
+      <div class="invalid-feedback">
+        Debe ingresar un nombre.
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label  class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+      <input [ngClass]="{'is-invalid': userForm.controls['lastName'].invalid && userForm.controls['lastName'].touched}" formControlName="lastName" type="text" class="form-control" id="lastName" >
+      <div class="invalid-feedback">
+        Debe ingresar un apellido
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label  class="col-sm-2 col-form-label">Edad</label>
+    <div class="col-sm-10">
+      <input [ngClass]="{'is-invalid': userForm.controls['age'].invalid && userForm.controls['age'].touched && userForm.controls['phone'].value > 18}" formControlName="age" type="text" class="form-control" id="age" >
+      <div class="invalid-feedback">
+        Debe ingresar una edad
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label  class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input [ngClass]="{'is-invalid': userForm.controls['email'].invalid && userForm.controls['email'].touched}" formControlName="email" type="text" class="form-control" id="email" >
+      <div class="invalid-feedback">
+        Debe ingresar un correo.
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label  class="col-sm-2 col-form-label">Telefono</label>
+    <div class="col-sm-10">
+      <input [ngClass]="{'is-invalid': userForm.controls['phone'].invalid && userForm.controls['phone'].touched}"  formControlName="phone" type="text" class="form-control" id="phone" >
+      <div class="invalid-feedback">
+        Debe ingresar un telefono.
+      </div>
+    </div>
+  </div>
+  <button 
+  [disabled]="userForm.invalid"
+  type="submit" style="width: 100px;" >Enviar</button>
+</form>
